@@ -1,0 +1,58 @@
+
+
+.container{
+    max-width:1440px ;
+display: flex;
+margin-top:30px;
+gap: 20px;
+padding: 10px 128px;
+align-items: center;
+justify-content: center;
+}
+
+.containerImage{
+    display: flex;
+    margin-right: auto;
+    background-image:linear-gradient(90deg, rgba(9,8,28,0.6) 30%, rgba(222,85,16,0.2) 40%, rgba(34,27,23,0.6) 50%), url('../../images/background.jpg');
+    width: 900px;
+    height: 800px;
+    background-size: cover;
+    border: blur(2px);
+}
+
+.block{
+    background: radial-gradient(circle, rgba(122,116,111,0) 10%, rgba(164,99,45,1) 100%);
+    border-radius: 20px;
+    padding:15px ;
+    text-align: center;
+}
+
+.buttonHome{
+    display: block;
+    width: 100px;
+    cursor: pointer;
+    padding: 10px;
+    margin: auto;
+    margin-top: 30px;
+    border-color: #00d4ff;
+    border-width: 2px;
+    border-style: inset;
+    border-radius: 6px;
+   text-align: center;
+   font-size: 18px;
+   font-weight: bold;
+   color: #15111f;
+   background-color:rgba(0, 212, 255, 0.5);
+
+}
+
+.buttonHome:hover {
+    box-shadow: 5px 5px 2px 1px rgba(0, 212, 255, 0.5);
+}
+
+.text{
+    color: #15111f;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+}

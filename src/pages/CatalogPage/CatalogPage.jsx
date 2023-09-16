@@ -1,9 +1,15 @@
-import { CarsList } from "components/CarsList/CarsList"
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { getCarsThunk } from "redux/CarsOperation";
 import { selectCars, selectFilter } from "redux/CarsSelector";
 import { setFilter } from "redux/CarsSlice";
+
+import CarsList from "components/CarsList/CarsList"
+import Filter from "components/Filter/Filter";
+
+import css from './CatalogPage.module.css'
 
 const CatalogPage = () => {
     const dispatch = useDispatch();
@@ -43,9 +49,10 @@ const CatalogPage = () => {
     }, [dispatch]);
 
     return (
-        <>
-{cars?.length > 0 && <CarsList adverts={filteredCars} />}
-</>
+      <div className={css.container}>
+        <Filter cars={filteredCars}/>
+        {cars?.length > 0 && <CarsList adverts={filteredCars} />}
+      </div>
     )
 }
 export default CatalogPage

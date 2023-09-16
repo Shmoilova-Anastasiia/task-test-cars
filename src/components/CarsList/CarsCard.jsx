@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
-export const CarsCard = ({ locationData, carData }) => {
+import css from './CarsList.module.css'
+
+const CarsCard = ({ locationData, carData }) => {
 
     const findShortestString = arrStrings => {
         if (!arrStrings || arrStrings.length === 0) {
@@ -30,19 +32,19 @@ export const CarsCard = ({ locationData, carData }) => {
 
     return(
         <div>
-            <ul>
+            <ul className={css.listCard}>
                 {locationData.map((item, idx) => (
                 <li
                     key={idx}
-                    className={''}
+                    className={css.itemCard}
                 >
                     {item}
                     {idx < locationData.length - 1}
                 </li>))}
             </ul>
-            <ul>
+            <ul className={css.listCard}>
                 {Object.entries(carData).map(([key, value], idx, arr) => (
-                    <li key={idx} className="">
+                    <li key={idx} className={css.itemCard}>
                     {formatedValue(key, value)}
                     {  idx < arr.length - 1}
                     </li>
@@ -56,3 +58,5 @@ CarsCard.propTypes = {
     carData: PropTypes.object.isRequired,
     locationData: PropTypes.array.isRequired
   };
+
+  export default CarsCard;

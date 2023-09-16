@@ -18,12 +18,6 @@ const handlePending = state => {
   state.error = null;
 };
 
-const handleFulfilled = (state, { payload }) => {
-  state.isLoading = false;
-  state.error = null;
-  state.items = payload;
-};
-
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
   state.error = payload;

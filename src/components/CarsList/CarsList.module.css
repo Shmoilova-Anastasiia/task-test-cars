@@ -1,0 +1,127 @@
+.containerCatalog{
+
+  max-width:1440px ;
+}
+
+.list {
+    max-width: 1440px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 0;
+    grid-column-gap: 28px ;
+    grid-row-gap: 50px;
+    margin-top: 50px;
+    align-items: center;
+    margin-bottom: 100px;
+
+}
+
+.button{
+    display: block;
+cursor: pointer;
+background: transparent;
+border: none;
+margin: auto;
+font-size: 16px;
+color:rgba(222,85,16,1);
+
+}
+
+.button:hover{
+    text-decoration: underline;
+}
+
+.item{
+    max-width: 274px;
+    background: radial-gradient(circle, rgba(122,116,111,0) 10%, rgba(164,99,45,1) 100%);
+    border-radius: 14px;
+    padding: 0;
+}
+
+.thumbImage{
+position: relative;
+}
+
+.buttonImage {
+    position: absolute;
+    background: transparent;
+    border: none;
+    
+    top:6px;
+    left: 242px;
+    cursor: pointer;
+    
+}
+
+.iconHeart {
+    color: rgba(255, 255, 255, 0.8);
+    width: 18px;
+    height: 18px;
+
+}
+
+.iconHeart_favorite {
+ color: rgba(52, 112, 255, 1);
+
+}
+
+.image{
+    border-radius: 14px;
+height: 268px;
+object-fit: cover;
+}
+
+.buttonCard{
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    padding: 12px 98px;
+    
+    text-wrap: nowrap;
+    margin-top: 28px;
+    border-color: #00d4ff;
+    border-width: 2px;
+    border-style: inset;
+    border-radius: 12px;
+   text-align: center;
+   font-size: 14px;
+   font-weight: bold;
+   color: #15111f;
+   background-color:rgba(0, 212, 255, 0.5);
+}
+
+.buttonCard:hover{
+    box-shadow: 0 -5px 2px 1px rgba(0, 212, 255, 0.5);
+}
+
+.listCard {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+
+}
+
+.itemCard{
+    max-width: 274px;
+    color: #15111f;
+    font-size: 12px;
+   
+    padding-right: 5px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color:rgba(222,85,16,1);
+}
+
+.titleCard{
+   display: flex;
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.5;
+    
+}
+
+.titlePart{
+  margin-left: auto;
+    
+}
+
