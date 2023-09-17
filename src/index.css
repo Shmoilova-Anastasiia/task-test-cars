@@ -7,6 +7,20 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Manrope';
+  src: url('../assets/fonts/Manrope-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../assets/fonts/Manrope-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: Manrope, sans-serif;
