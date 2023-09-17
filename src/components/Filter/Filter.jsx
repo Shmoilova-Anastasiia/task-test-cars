@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useLocation } from 'react-router-dom';
 
 
 import { resetFilter, setFilter } from '../../redux/CarsSlice';
@@ -16,9 +15,6 @@ const Filter = ({ cars }) => {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
-  const { pathname } = useLocation();
-
-  const isFormDisabled = pathname === '/favorites' && cars?.length === 0;
 
   const parsePrice = str => str.split('').slice(1).join('');
 
@@ -58,7 +54,6 @@ const Filter = ({ cars }) => {
     formState: { errors }
   } = useForm({
     mode: 'onChange',
-    shouldDisable: isFormDisabled
   });
 
   useEffect(() => {
@@ -82,23 +77,19 @@ const Filter = ({ cars }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-     
-    //   className={`form flex-wrap px-3 ${isFormDisabled ? 'pointer-events-none opacity-60' : ''}`}
-      disabled={isFormDisabled}
+      
     >
       <div 
       className={css.form}
-    //   className="flex flex-wrap items-center justify-between gap-2"
       >
         <div 
-        className={css.form}
-        // className="form mb-2 flex-wrap items-center gap-3"
+        className={css.containerForm}
         >
           <div 
-        //   className="select-wrapper mb-2"
+          className={css.select}
           >
             <label htmlFor="brand" 
-            // className="select-label"
+            className={css.selectLabel}
             >
               Car brand
             </label>
@@ -109,24 +100,24 @@ const Filter = ({ cars }) => {
               render={({ field }) => (
                 <>
                   <select {...field} 
-                //   className="select-brand"
+                  className={css.selectBrand}
                   >
                     <option value="" 
-                    // className="select-placeholder"
+                    className={css.selectPlaceholder}
                     >
                       Enter the text
                     </option>
                     {uniqueBrands &&
                       uniqueBrands.map((make, idx) => (
                         <option key={idx} value={make} 
-                        // className="select-text"
+                        className={css.selectText}
                         >
                           {make}
                         </option>
                       ))}
                   </select>
                   {errors.brand && (
-                    <p className={`error ${isFormDisabled ? 'opacity-0' : 'opacity-100'}`}>
+                    <p className={css.errorMessage}>
                       {errors.brand.type === 'required'
                         ? 'Brand is required'
                         : errors.brand.message}
@@ -137,10 +128,10 @@ const Filter = ({ cars }) => {
             />
           </div>
           <div 
-        //   className="select-wrapper mb-2"
+       className={css.select}
           >
             <label htmlFor="price" 
-            // className="select-label"
+            className={css.selectLabel}
             >
               Price/ 1 hour
             </label>
@@ -158,24 +149,24 @@ const Filter = ({ cars }) => {
                 render={({ field }) => (
                   <>
                     <select {...field} 
-                    // className="select-price"
+                     className={css.selectBrand}
+                    
                     >
                       <option value="" 
-                    //   className="select-placeholder"
                       >
                         To $
                       </option>
                       {price &&
                         price.map((price, index) => (
                           <option key={index} value={price} 
-                        //   className="select-text"
+                  
                           >
                             {price}
                           </option>
                         ))}
                     </select>
                     {errors.price && (
-                      <p className={`error ${isFormDisabled ? 'opacity-0' : 'opacity-100'}`}>
+                      <p className={css.errorMessage}>
                         {errors.price.type === 'required'
                           ? 'Price is required'
                           : errors.price.message}
@@ -187,22 +178,23 @@ const Filter = ({ cars }) => {
             </div>
           </div>
           <div 
-        //   className="mb-2 flex flex-col"
+       className={css.containerPrice}
           >
             <label htmlFor="minMileage" 
-            // className="select-label"
+            className={css.selectLabel}
             >
               Car mileage / km (from)
             </label>
             <div 
-            // className="relative flex after:absolute after:inset-y-0 after:right-1/2 after:h-[48px] after:w-[1px] after:bg-[rgba(138,138,137,0.2)] after:content-['']"
+            className={css.containerSelect}
             >
               <label 
-            //   className="relative"
+             className={css.selectLabel}
               >
                 <input
                   type="number"
-                //   className="select-from relative m-auto select-text"
+                  placeholder='From'
+                className={css.selectPrice}
                   {...register('from', {
                     required: 'This field is required',
                     min: {
@@ -211,18 +203,14 @@ const Filter = ({ cars }) => {
                     }
                   })}
                 />
-                <span 
-                // className="select-placeholder absolute left-3 top-1/2 -translate-y-1/2"
-                >
-                  From
-                </span>
               </label>
               <label 
-            //   className="relative"
+            className={css.selectLabel}
               >
                 <input
                   type="number"
-                //   className="select-to select-text"
+                  placeholder='To'
+                  className={css.selectPrice}
                   {...register('to', {
                     required: 'This field is required',
                     min: {
@@ -237,16 +225,9 @@ const Filter = ({ cars }) => {
                     }
                   })}
                 />
-                <span 
-                // className="select-placeholder absolute left-3 top-1/2 -translate-y-1/2"
-                >
-                  To
-                </span>
               </label>
               <p
-                className={`error flex items-center justify-between gap-1 ${
-                  isFormDisabled ? 'opacity-0' : 'opacity-100'
-                }`}
+                className={css.errorMessage}
               >
                 {errors?.from && <span>{errors.from.message}</span>}
                 {errors?.to && <span>{errors.to.message}</span>}
@@ -255,13 +236,14 @@ const Filter = ({ cars }) => {
           </div>
         </div>
         <div 
-        // className="-mt-6 mb-2 flex flex-wrap items-center justify-center gap-3"
+        className={css.containerButton}
         >
           <button type="submit" 
-        //   className="button-search"
+          className={css.buttonFilter}
           >Search</button>
           <button
             type="button"
+            className={css.buttonFilter}
             onClick={resetFilterInRedux}
           >Reset</button>
         </div>

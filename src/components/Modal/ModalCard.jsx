@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 
 import DefaultImage from "../../images/DefaultImage.jpeg"
+import css from './Modal.module.css'
 
 const ModalCard = ({ car }) => {
   const {
@@ -16,6 +17,7 @@ const ModalCard = ({ car }) => {
     rentalConditions,
     mileage
   } = car;
+
 
   const getFuelEngineData = car => {
     const { fuelConsumption, engineSize } = car;
@@ -50,9 +52,9 @@ const ModalCard = ({ car }) => {
   const price = parsePrice(rentalPrice);
 
   return (
-    <>
+    <div className={css.containerCard}>
         <img 
-        // className={css.image}
+        className={css.image}
         src={img ? img : DefaultImage} 
         alt={`${make} ${model}`}
         width="461"
@@ -60,39 +62,29 @@ const ModalCard = ({ car }) => {
         loading="lazy"
         />
       
-      <h2>
-        {make} <span className="">{model}</span>, {year}
+      <h2 className={css.titleCard}>
+        {make} <span className={css.titleAccent}>{model}</span>, {year}
       </h2>
       <div 
-    //   className="mb-[14px] gap-[4px]"
+      // className={css.containerLocation}
       >
-        <ul 
-        // className="modal-description mb-[4px] flex items-center justify-start"
-        >
+        <ul className={css.listLocation}>
           {locationData.map((item, idx) => (
     <li
       key={idx}
-    //   className={
-    //     className
-    //       ? `text-description ${className} dark:text-white/50`
-    //       : 'text-description dark:text-white/50'
-    //   }
+     className={css.itemLocation} 
     >
       {item}
       {idx < locationData.length - 1}
     </li>))}
         </ul>
         <ul 
-        // className="modal-description flex items-center justify-start"
+        className={css.listLocation} 
         >
           {carData.map((item, idx) => (
     <li
       key={idx}
-    //   className={
-    //     className
-    //       ? `text-description ${className} dark:text-white/50`
-    //       : 'text-description dark:text-white/50'
-    //   }
+      className={css.itemLocation}
     >
       {item}
       {idx < locationData.length - 1}
@@ -100,20 +92,20 @@ const ModalCard = ({ car }) => {
         </ul>
       </div>
       <div 
-    //   className="modal-accent-descr dark:text-white"
+      className={css.containerDescription}
       >{description}</div>
       <div 
-    //   className="mb-[24px]"
+      className={css.containerFunc}
       >
-      <p 
-    //   className="modal-second-title dark:text-white"
-      >Accessories and functionalities:</p>
+      <h3 
+      className={css.titleFunc}
+      >Accessories and functionalities:</h3>
       <ul 
-    //   className="mb-[4px] flex flex-wrap items-center justify-start"
+     className={css.listAcces}
       >
       {accessories.map((item, idx) => (
         <li key={idx} 
-        // className="text-description dark:text-white/50"
+        className={css.itemAcces}
         >
           {item}
           {idx < accessories.length - 1}
@@ -121,11 +113,11 @@ const ModalCard = ({ car }) => {
       ))}
     </ul>
     <ul 
-    //   className="mb-[4px] flex flex-wrap items-center justify-start"
+     className={css.listAcces}
       >
       {functionalities.map((item, idx) => (
         <li key={idx} 
-        // className="text-description dark:text-white/50"
+        className={css.itemAcces}
         >
           {item}
           {idx < accessories.length - 1}
@@ -134,56 +126,56 @@ const ModalCard = ({ car }) => {
     </ul>
     </div>
       <div 
-    //   className="mb-[24px] "
+   className={css.containerFunc}
       >
-      <p 
-    //   className="modal-second-title dark:text-white"
-      >Rental Conditions:</p>
+      <h3 
+        className={css.titleFunc}
+      >Rental Conditions:</h3>
       <ul 
-    //   className="modal-cond-block gap-3"
+    className={css.listRental}
       >
         <li 
-        // className="modal-btn-cond dark:bg-slate-600"
+        className={css.itemRental}
         >
             <p 
-            // className="cond dark:text-white/50"
+            
             >{rentConditions[0]}</p>
             <span 
-            // className="modal-accent-cond"
+            className={css.itemAccent}
             >{rentConditions[1]}</span>
         </li>
         <li 
-        // className="modal-btn-cond dark:bg-slate-600"
+        className={css.itemRental}
         >
             <p 
-            // className="cond dark:text-white/50"
+            
             >{rentConditions[2]}</p>
         </li>
         <li 
-        // className="modal-btn-cond dark:bg-slate-600"
+        className={css.itemRental}
         >
             <p 
-            // className="cond dark:text-white/50"
+            
             >{rentConditions[3]}</p>
         </li>
         <li 
-        // className="modal-btn-cond dark:bg-slate-600"
+        className={css.itemRental}
         >
             <p 
-            // className="cond dark:text-white/50"
+            
             >{'Mileage: '}</p>
             <span 
-            // className="modal-accent-cond"
+             className={css.itemAccent}
             >{mile}</span>
         </li>
         <li 
-        // className="modal-btn-cond dark:bg-slate-600"
+        className={css.itemRental}
         >
             <p 
-            // className="cond dark:text-white/50"
+            
             >{'Price: '}</p>
             <span 
-            // className="modal-accent-cond"
+             className={css.itemAccent}
             >{`${price}$`}</span>
         </li>
       </ul>
@@ -191,11 +183,11 @@ const ModalCard = ({ car }) => {
      
 
       <a href="tel:+380730000000" 
-    //   className="modal-btn-link"
+    className={css.linkModal}
       >
         Rental car
       </a>
-    </>
+    </div>
   );
 };
 

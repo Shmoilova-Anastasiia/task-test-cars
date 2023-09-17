@@ -1,3 +1,91 @@
 .form{
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.containerForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:18px;
+}
+
+.select{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.selectLabel{
+    color: rgba(138, 138, 137, 1);
+    font-size: 14px;
+    margin-bottom: 8px;
+
+}
+
+.selectBrand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    
+    border-radius: 14px;
+    border: none;
+    background-color: rgba(138, 138, 137, 0.8);
+
+}
+
+.buttonFilter{
+    cursor: pointer;
+   
+    background-color: rgba(0, 212, 255, 0.8);
+    padding: 14px 44px;
+    border-radius: 12px;
+}
+
+.containerButton{
+    display: flex;
+    gap: 10px;
+   padding-top: 15px;
+   border: none;
+}
+
+.buttonFilter:hover{
+    box-shadow: 0 -5px 2px 1px rgba(0, 212, 255, 0.5);
+}
+
+.containerPrice{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.selectPrice{
+   display: flex;
+   position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-left: 18px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    
+    border-radius: 14px;
+    border: none;
+    background-color: rgba(138, 138, 137, 0.8);
+
+}
+.containerSelect{
+display: flex;
+}
+
+.errorMessage{
+    color: red;
+    position: absolute;
+    left: 0;
+    top: 70px;
 }

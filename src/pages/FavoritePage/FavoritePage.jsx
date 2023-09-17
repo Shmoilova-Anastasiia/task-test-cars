@@ -3,14 +3,16 @@ import Filter from "components/Filter/Filter";
 import { useSelector } from "react-redux";
 import { selectFavorites } from "redux/CarsSelector";
 
+import css from '../CatalogPage/CatalogPage.module.css'
+
  const FavotitePage = () => {
     const favoriteCars = useSelector(selectFavorites);
     return (
 <div 
-// className="mt-[-3rem] w-full wide:mt-[-8rem]"
+className={css.container}
 >
       <div 
-    //   className="relative mx-auto my-0 w-full "
+    
       >
        <Filter cars={favoriteCars}/>
        <FavoritesList/>

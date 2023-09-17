@@ -41,15 +41,14 @@ const Modal = ({ onClose, children, isOpen }) => {
     onClick={handleModalClose}>
       <div 
       className={css.modal}
-    //   className="modal max-w-full dark:bg-slate-700"
       >
         <button
           onClick={onClose}
-        //   className="close"
+          className={css.buttonClose}
           type="button"
            
         >
-            <IoMdClose/>
+            <IoMdClose className={css.iconClose}/>
         </button>
         {children}
       </div>

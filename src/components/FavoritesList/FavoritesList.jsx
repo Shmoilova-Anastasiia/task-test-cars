@@ -3,9 +3,10 @@ import { useSelector } from 'react-redux';
 import { selectFavorites, selectFilter } from '../../redux/CarsSelector';
 
 
-import NotFound from '../NotFound';
+import NotFound from '../NotFound/NotFound';
 
 import  CarsItem  from '../CarsList/CarsItem';
+import css from '../CarsList/CarsList.module.css'
 
 const FavoritesList = () => {
   const favoriteCars = useSelector(selectFavorites);
@@ -35,11 +36,11 @@ const FavoritesList = () => {
 
   return (
     <div 
-    // className="flex flex-col items-center justify-center gap-5 pb-4"
+   className={css.containerCatalog}
     >
       {!filteredCars.length && <NotFound />}
       <ul 
-    //   className="cards-list"
+      className={css.list}
       >
         {filteredCars.map(car => (
           <CarsItem car={car} key={car.id} />
