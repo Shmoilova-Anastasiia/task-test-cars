@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/task-test-cars/static/css/main.5bb961b9.css",
+    "main.css": "/task-test-cars/static/css/main.af68135b.css",
     "main.js": "/task-test-cars/static/js/main.52980c31.js",
     "static/css/674.8fae14dd.chunk.css": "/task-test-cars/static/css/674.8fae14dd.chunk.css",
     "static/js/674.8e2d3bb0.chunk.js": "/task-test-cars/static/js/674.8e2d3bb0.chunk.js",
@@ -13,8 +13,10 @@
     "static/media/FoundImage.jpeg": "/task-test-cars/static/media/FoundImage.982c394401c5d8ff2dcd.jpeg",
     "static/media/DefaultImage.jpeg": "/task-test-cars/static/media/DefaultImage.2f1dfdb3f92f50a95b90.jpeg",
     "index.html": "/task-test-cars/index.html",
+    "static/media/Manrope-Medium.ttf": "/task-test-cars/static/media/Manrope-Medium.31d6cfe0d16ae931b73c.ttf",
     "static/media/Manrope-Regular.ttf": "/task-test-cars/static/media/Manrope-Regular.31d6cfe0d16ae931b73c.ttf",
-    "main.5bb961b9.css.map": "/task-test-cars/static/css/main.5bb961b9.css.map",
+    "static/media/Manrope-SemiBold.ttf": "/task-test-cars/static/media/Manrope-SemiBold.31d6cfe0d16ae931b73c.ttf",
+    "main.af68135b.css.map": "/task-test-cars/static/css/main.af68135b.css.map",
     "main.52980c31.js.map": "/task-test-cars/static/js/main.52980c31.js.map",
     "674.8fae14dd.chunk.css.map": "/task-test-cars/static/css/674.8fae14dd.chunk.css.map",
     "674.8e2d3bb0.chunk.js.map": "/task-test-cars/static/js/674.8e2d3bb0.chunk.js.map",
@@ -25,7 +27,7 @@
     "321.afd98f75.chunk.js.map": "/task-test-cars/static/js/321.afd98f75.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bb961b9.css",
+    "static/css/main.af68135b.css",
     "static/js/main.52980c31.js"
   ]
 }
