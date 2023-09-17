@@ -13,12 +13,12 @@
 .headerIcon{
     width:18px ;
     height: 18px;
-    color: #00d4ff;
+    color: rgba(52, 112, 255, 1);
 }
 
 .logo{
     margin-left: 10px;
-    color: #00d4ff;
+    color: rgba(52, 112, 255, 1);
 }
  
 .logoPart{
@@ -34,11 +34,11 @@
 }
 
 .navLink{
-    color:rgba(222,85,16,1);
+    color:rgba(52, 112, 255, 1);
     font-size: 18px;
 }
 
 .navLink:hover {
-    color:#00d4ff;
+    color:rgba(11, 68, 205, 1);
     font-weight: bold;
 }

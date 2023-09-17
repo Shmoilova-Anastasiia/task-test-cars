@@ -16,7 +16,8 @@ body {
   font-weight: 400;
   line-height: 1.5;
   font-style: normal;
-  background: linear-gradient(90deg, rgba(9,8,28,1) 30%, rgba(222,85,16,1) 40%, rgba(34,27,23,0.9) 50%);
+  /* background: linear-gradient(90deg, rgba(9,8,28,1) 30%, rgba(222,85,16,1) 40%, rgba(34,27,23,0.9) 50%); */
+  background: linear-gradient(90deg, rgba(181,211,212,0.577468487394958) 0%, rgba(196,203,202,1) 49%, rgba(181,211,212,1) 100%);
 }
 
 code {
